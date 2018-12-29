@@ -148,7 +148,46 @@
 			    },
 			    // 加载完所有的图片资源执行的方法
 			    end: function () {
-			        $('.loadingWrap').hide();
+			    	$('.loadingWrap').hide();
+
+			    	var $audio = document.getElementById('bgm');
+			    	$audio.load();
+
+			    	var $value=0,
+				    	$winHeight = $(window).height(),
+						$sumHeight = $('#scrollWrap').height();
+
+			    	function sliderPage($offsetH,$rate) {
+			    		var $h = $offsetH,
+			    			$t = $rate,
+			    			$stop = $sumHeight-$winHeight,
+			    			$scroll = $('#container').scrollTop();
+			    	    $('#container').scrollTop(0);
+
+			    		if ($stop>$scroll) {
+			    			var $Time = setInterval(function(){
+			    				$value += $h;
+			    				$('#container').scrollTop($value);
+			    				if ($stop<=$value) {
+			    		        	clearInterval($Time);
+			    		        	$('.restartWrap').animate({
+			    		        		opacity: 1},
+			    		        		5000,function(){
+			    			        			$value = 0;
+			    			        			$('.restartBtn').addClass('bottomIn');
+			    			        			$('.restart img').addClass('topIn');
+			    			        			if (!$audio.paused) {
+			    			        				$audio.paused = true;
+			    			        				$audio.pause();
+			    		        			};
+			    	        		});
+			    		        };
+			    			},$t);
+			    		};
+			    		
+			    	};
+			    	sliderPage(1,16);
+
 			    }
 			});
 		</script>

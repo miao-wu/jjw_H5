@@ -13,18 +13,8 @@ $(document).ready(function() {
 	        document.addEventListener("touchmove",tmv,false);
 	};
 	stoptouchmove();
-	var $audio = document.getElementById('bgm');
 
-	var $loadTime = setInterval(function(){
-		if ($('.loadingWrap').is(':hidden')) {
-			sliderPage(1,16);			
-			if ($audio.paused) {
-				$audio.paused = false;
-				$audio.play();
-			};
-			clearInterval($loadTime);
-		};
-	},100);
+	var $audio = document.getElementById('bgm');
 
 	var $value=0;
 
@@ -88,7 +78,7 @@ $(document).ready(function() {
     		    sliderPage(1,16);
     		    if ($audio.paused) {
     		    	$audio.paused = false;
-    		    	$audio.play();
+    		    	$audio.load();
     		    };
     	});
     	
