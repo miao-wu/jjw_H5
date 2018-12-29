@@ -113,7 +113,7 @@
 					<div class="restartBtn">再看一次</div>
 				</div>
 			</div>
-			<audio src="audio/audio.mp3" id="bgm" autoplay="autoplay" loop="loop" type="audio/mp3"></audio>
+			<audio src="audio/audio.mp3" id="bgm" loop="loop" type="audio/mp3"></audio>
 		</div>
 		<script>
 			var imgs = [
@@ -149,10 +149,15 @@
 			    // 加载完所有的图片资源执行的方法
 			    end: function () {
 			    	$('.loadingWrap').hide();
-
+			    	
 			    	var $audio = document.getElementById('bgm');
-			    	$audio.load();
 			    	$audio.play();
+
+			    	$('.loadingWrap').on('startBGM', function() {
+			    		$audio.load();
+			    		$audio.play();
+			    	});
+			    	$('.loadingWrap').trigger('startBGM');
 
 			    	var $value=0,
 				    	$winHeight = $(window).height(),
