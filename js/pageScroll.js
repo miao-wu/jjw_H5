@@ -16,7 +16,7 @@ $(document).ready(function() {
 
 	var $loadTime = setInterval(function(){
 		if ($('.loadingWrap').is(':hidden')) {
-			sliderPage(1,300);
+			sliderPage(1,16);
 			var $audio = document.getElementById('bgm');
 			if ($audio.paused) {
 				$audio.paused = false;
@@ -28,11 +28,10 @@ $(document).ready(function() {
 
 	var $value=0;
 
-	function sliderPage($offsetH,$speed) {
+	function sliderPage($offsetH,$rate) {
 		var $h = $offsetH,
-			$s = $speed,
+			$t = $rate,
 			$stop = $sumHeight-$winHeight,
-			$t = $stop/$s,
 			$scroll = $('#container').scrollTop();
 	    $('#container').scrollTop(0);
 
@@ -81,7 +80,7 @@ $(document).ready(function() {
     			$('#container').scrollTop(0);
     			$('.restartBtn').removeClass('bottomIn');
     			$('.restart img').removeClass('topIn');
-    		    sliderPage(1,300);
+    		    sliderPage(1,16);
     	});
     	
     });
