@@ -14,6 +14,13 @@ $(document).ready(function() {
 		};
 	},200);
 
+	var tmv=function(e){e.preventDefault();};
+	function stop(){
+	        document.body.style.overflow='hidden';       
+	        document.addEventListener("touchmove",tmv,false);//禁止页面滑动
+	};
+	stop();
+
 	var $value=0;
 
 	function sliderPage($offsetH,$speed) {
