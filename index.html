@@ -151,18 +151,20 @@
 			    	$('.loadingWrap').hide();
 
 			    	var $audio = document.getElementById('bgm');
+			    	$audio.load();
 			    	$audio.play();
 
 			    	var $value=0,
 				    	$winHeight = $(window).height(),
 						$sumHeight = $('#scrollWrap').height();
 
+					$('#container').scrollTop(0);
+
 			    	function sliderPage($offsetH,$rate) {
 			    		var $h = $offsetH,
 			    			$t = $rate,
 			    			$stop = $sumHeight-$winHeight,
 			    			$scroll = $('#container').scrollTop();
-			    	    $('#container').scrollTop(0);
 
 			    		if ($stop>$scroll) {
 			    			var $Time = setInterval(function(){
@@ -186,8 +188,8 @@
 			    		};
 			    		
 			    	};
-			    	sliderPage(1,16);
-
+			    	setTimeout(function(){sliderPage(1,16)},3000);
+			    	
 			    }
 			});
 		</script>
