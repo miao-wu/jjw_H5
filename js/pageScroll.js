@@ -71,8 +71,7 @@ $(document).ready(function() {
     $('.restartBtn').on('click', function() {
     	$('.restartWrap').animate({
     		opacity: 0},
-    		100, function() {
-    			$('#container').scrollTop(0);
+    		10, function() {
     			$('.restartBtn').removeClass('bottomIn');
     			$('.restart img').removeClass('topIn');
     		    sliderPage(1,16);
@@ -81,7 +80,7 @@ $(document).ready(function() {
     		    	$audio.load();
     		    };
     	});
-    	
+    	$('#container').scrollTop(0);	
     });
 
 });
