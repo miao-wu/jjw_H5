@@ -24,7 +24,7 @@ $(document).ready(function() {
 			};
 			clearInterval($loadTime);
 		};
-	},200);
+	},100);
 
 	var $value=0;
 
