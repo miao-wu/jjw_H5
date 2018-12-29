@@ -13,11 +13,11 @@ $(document).ready(function() {
 	        document.addEventListener("touchmove",tmv,false);
 	};
 	stoptouchmove();
+	var $audio = document.getElementById('bgm');
 
 	var $loadTime = setInterval(function(){
 		if ($('.loadingWrap').is(':hidden')) {
-			sliderPage(1,16);
-			var $audio = document.getElementById('bgm');
+			sliderPage(1,16);			
 			if ($audio.paused) {
 				$audio.paused = false;
 				$audio.play();
@@ -43,11 +43,16 @@ $(document).ready(function() {
 		        	clearInterval($Time);
 		        	$('.restartWrap').animate({
 		        		opacity: 1},
-		        		2600,function(){
-		        			$value = 0;
-		        			$('.restartBtn').addClass('bottomIn');
-		        			$('.restart img').addClass('topIn');
-		        		});
+		        		5000,function(){
+			        			$value = 0;
+			        			$('.restartBtn').addClass('bottomIn');
+			        			$('.restart img').addClass('topIn');
+			        			if (!$audio.paused) {
+			        				$audio.paused = true;
+			        				$audio.pause();
+			        				console.log($audio.currentTime);
+		        			};
+	        		});
 		        };
 			},$t);
 		};
@@ -81,6 +86,10 @@ $(document).ready(function() {
     			$('.restartBtn').removeClass('bottomIn');
     			$('.restart img').removeClass('topIn');
     		    sliderPage(1,16);
+    		    if ($audio.paused) {
+    		    	$audio.paused = false;
+    		    	$audio.play();
+    		    };
     	});
     	
     });
