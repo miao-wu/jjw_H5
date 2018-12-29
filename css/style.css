@@ -1,0 +1,59 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body{
+	background-color: #71b141;
+}
+
+#container {
+	box-sizing: border-box;
+	width: 7.5rem;
+	margin: 0 auto;
+	background-color: #71b141;
+}
+
+img{width: 100%;height: auto;max-width: 100%;}
+
+.cfloat::after {
+	content: '';
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.cfloat {
+	zoom: 1;
+}
+
+.magTop{width: 100%;height: 0.88rem;}
+.img_list{position: relative;padding: 0;}
+.crumbGroup{position: absolute;top: 2.89rem;left: 3.19rem;}
+.crumb03{width: 0.44rem;height:0.16rem;margin: 0 auto;margin-bottom: 0.12rem;}
+.crumb02{width: 0.80rem;height:0.31rem;margin: 0 auto;margin-bottom: 0.06rem;}
+.crumb01{width: 1.11rem;height:0.43rem;margin: 0 auto;}
+
+.controlWrap{position: absolute;top: 1.23rem;left: 1.45rem;}
+.control{width: 0.72rem;height:1.18rem;margin: 0 auto;}
+.light{width: 1.43rem;height: 0.55rem;position: relative;bottom: 0.34rem;}
+
+.jumpWrap{position: absolute;top: 0.4rem;left: 1.6rem;}
+.jump{width: 3.2rem;height: 2.19rem;}
+
+.textImgWrap{position: absolute;top: 2.86rem;left: 3.84rem;}
+.textImg{width: 0.8rem;height: 3.35rem;}
+
+.loadingWrap{position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: #71b141;z-index: 30;}
+.loading{width: 2.33rem;margin: 0 auto;}
+.load{border: 0.01rem solid #fff;padding: 0.06rem;border-radius: 0.08rem;}
+.loadwrap{margin-top: 0.2rem;}
+.loadGroup{height: 0.04rem;background-color: #fff;border-radius: 0.02rem;}
+.loadText p{font-size: 0.26rem;text-align: center;color: #fff;}
+
+.restartWrap{position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: #71b141;z-index: 20;opacity: 0;}
+.restart{width: 2.33rem;margin: 0 auto;}
+.restartLogo{opacity: 0;}
+.restartBtn{font-size: 0.32rem;color: #fff;text-align: center;font-family: -apple-system-font, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", Arial, sans-serif;line-height: 0.6rem;font-weight: bold;border: 0.01rem solid #fff;border-radius: 0.1rem;margin-top: 0.4rem;opacity: 0;}

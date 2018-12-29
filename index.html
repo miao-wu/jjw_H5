@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<!-- <meta content="black" name="apple-mobile-web-app-status-bar-style"> -->
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<meta name="keywords" content="武汉楼市，武汉新房" />
+		<meta name="description" content="了解最全面的武汉二手房价格、武汉房价涨幅、武汉二手房成交，首选武汉吉家网！" />
+		<title>吉家二楼</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" href="css/animation.css">
+		<script type="text/javascript" src="js/flexible.min.js"></script>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/preload.js"></script>
+		<script type="text/javascript" src="js/pageScroll.js"></script>
+		<!-- GrowingIO Analytics code version 2.1 -->
+		<!-- Copyright 2015-2017 GrowingIO, Inc. More info available at http://www.growingio.com -->
+		<!-- <script type='text/javascript'>
+			! function(e, t, n, g, i) {
+				e[i] = e[i] || function() {
+					(e[i].q = e[i].q || []).push(arguments)
+				}, n = t.createElement("script"), tag = t.getElementsByTagName("script")[0], n.async = 1, n.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + g, tag.parentNode.insertBefore(n, tag)
+			}(window, document, "script", "assets.growingio.com/2.1/gio.js", "gio");
+			gio('init', 'abaf1f9496f7acef', {});
+
+			//custom page code begin here
+			//custom page code end here
+
+			gio('send');
+		</script> -->
+		<!-- End GrowingIO Analytics code version: 2.1 -->
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="scrollWrap">
+				<div class="magTop"></div>
+				<div class="img_list">
+					<div class="crumbGroup">
+						<div class="crumb03 tfromb10">
+							<img src="img/crumb03@2x.png" alt="img">
+						</div>
+						<div class="crumb02 tfromb8">
+							<img src="img/crumb02@2x.png" alt="img">
+						</div>
+						<div class="crumb01 tfromb10">
+							<img src="img/crumb01@2x.png" alt="img">
+						</div>
+					</div>
+					<img src="img/jjw@2x_04.jpg" alt="img">
+				</div>
+				<div class="img_list">
+					<div class="controlWrap">
+						<div class="control tfromb10">
+							<img src="img/control@2x.png" alt="img">
+						</div>
+						<div class="light flashLight">
+							<img src="img/light@2x.png" alt="img">
+						</div>
+					</div>
+					<img src="img/jjw@2x_05.jpg" alt="img">
+				</div>
+				<div class="img_list">
+					<img src="img/jjw@2x_06.jpg" alt="img">
+				</div>
+				<div class="img_list">
+					<img src="img/jjw@2x_07.jpg" alt="img">
+				</div>
+				<div class="img_list">
+					<div class="jumpWrap">
+						<div class="jump tfromb10">
+							<img src="img/jump@2x.png" alt="img">
+						</div>
+					</div>
+					<img src="img/jjw@2x_08.jpg" alt="img">
+				</div>
+				<div class="img_list">
+					<div class="textImgWrap">
+						<div class="textImg tfromb10">
+							<img src="img/text-img@2x.png" alt="img">
+						</div>
+					</div>
+					<img src="img/jjw@2x_09.jpg" alt="img">
+				</div>
+				<div class="img_list">
+					<img src="img/jjw@2x_10.jpg" alt="img">
+				</div>
+				<div class="img_list">
+					<img src="img/jjw@2x_11.jpg" alt="img">
+				</div>
+			</div>
+			<div class="loadingWrap">
+				<div class="loading">
+					<img src="img/jjw_logo_w.png" alt="img">
+					<div class="loadwrap">
+						<div class="load">
+							<div class="loadGroup"></div>
+						</div>
+						<div class="loadText">
+							<p>0%</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="restartWrap">
+				<div class="restart">
+					<img src="img/jjw_logo_w.png" alt="img" class="restartLogo">
+					<div class="restartBtn">再看一次</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var imgs = [
+					    'img/crumb01@2x.png',
+					    'img/crumb02@2x.png',
+					    'img/crumb03@2x.png',
+					    'img/control@2x.png',
+					    'img/light@2x.png',
+					    'img/text-img@2x.png',
+					    'img/light@2x.png',
+					    'img/jjw@2x_04.jpg',
+					    'img/jjw@2x_05.jpg',
+					    'img/jjw@2x_06.jpg',
+					    'img/jjw@2x_07.jpg',
+					    'img/jjw@2x_08.jpg',
+					    'img/jjw@2x_09.jpg',
+					    'img/jjw@2x_10.jpg',
+					    'img/jjw@2x_11.jpg',
+					];
+			var index = 0,
+			    len = imgs.length,
+			    progressInner = $(".loadGroup"),
+			    progressTxt = $('.loadText p');
+			//图片预加载
+			$.preload(imgs, {
+			    minTimer: 3000,
+			    //每加载完一张执行的方法
+			    each: function (count) {
+			        var percent = Math.round((count+1) / len * 100) + '%';
+			        progressInner.css("width",percent);
+			        progressTxt.html(percent);
+			        console.log(percent);
+			    },
+			    // 加载完所有的图片资源执行的方法
+			    end: function () {
+			        $('.loadingWrap').hide();
+			        // //播放bgm
+			        // audio.play();
+			    }
+			});
+		</script>
+	</body>
+
+</html>
