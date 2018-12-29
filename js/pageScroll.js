@@ -7,19 +7,24 @@ $(document).ready(function() {
 		overflow: 'hidden',
 	});
 
+	var tmv=function(e){e.preventDefault();};
+	function stoptouchmove(){
+	        document.body.style.overflow='hidden';       
+	        document.addEventListener("touchmove",tmv,false);
+	};
+	stoptouchmove();
+
 	var $loadTime = setInterval(function(){
 		if ($('.loadingWrap').is(':hidden')) {
 			sliderPage(1,300);
+			var $audio = document.getElementById('bgm');
+			if ($audio.paused) {
+				$audio.paused = false;
+				$audio.play();
+			};
 			clearInterval($loadTime);
 		};
 	},200);
-
-	var tmv=function(e){e.preventDefault();};
-	function stop(){
-	        document.body.style.overflow='hidden';       
-	        document.addEventListener("touchmove",tmv,false);//禁止页面滑动
-	};
-	stop();
 
 	var $value=0;
 
